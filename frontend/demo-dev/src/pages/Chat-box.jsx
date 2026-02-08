@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import socket from "../socket/socket";
-import "./chatRoom.css";
+import "./ChatRoom.css";
 
 export default function chatRoom() {
   const { roomId } = useParams();

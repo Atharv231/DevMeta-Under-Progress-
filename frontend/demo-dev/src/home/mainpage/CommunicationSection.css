@@ -47,13 +47,13 @@ body {
   }
 }
 
-/* ===== CHAT WRAPPER ===== */
-.chat-wrapper {
+/* ===== chat1 WRAPPER ===== */
+.chat1-wrapper {
   position: relative;
 }
 
 /* ===== GLASS CARD ===== */
-.chat-box {
+.chat1-box {
   border-radius: 1.6rem;
   padding: 1rem;
   background: rgba(29, 4, 77, 0.211);
@@ -62,7 +62,7 @@ body {
 }
 
 /* ===== HEADER ===== */
-.chat-header {
+.chat1-header {
   display: flex;
   align-items: center;
   gap: 1.3rem;
@@ -71,12 +71,12 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.chat-title {
+.chat1-title {
   font-weight: 500;
   font-size: 1.2rem;
 }
 
-.chat-status {
+.chat1-status {
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -103,13 +103,13 @@ body {
 }
 
 /* ===== MESSAGES ===== */
-.chat-messages {
+.chat1-messages {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.chat-message {
+.chat1-message {
   display: flex;
   align-items: flex-start;
   gap: 1.4rem;
@@ -185,7 +185,7 @@ body {
 }
 
 /* ===== INPUT ===== */
-.chat-input {
+.chat1-input {
   margin-top: 0.5rem;
   display: flex;
   align-items: center;
@@ -196,7 +196,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.chat-input input {
+.chat1-input input {
   flex: 1;
   background: transparent;
   border: none;

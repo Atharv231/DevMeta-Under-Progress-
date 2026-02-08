@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import socket from "../socket/socket";
-import "./ChatRoom.css";
+import "./chatRoom.css";
 
-export default function ChatRoom() {
+export default function chatRoom() {
   const { roomId } = useParams();
   const currentUsername = localStorage.getItem("username");
   const roomPassword = localStorage.getItem("password");

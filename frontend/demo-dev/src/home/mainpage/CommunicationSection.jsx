@@ -28,30 +28,30 @@ const CommunicationSection = () => {
 
       <div className="comm-container">
         <div className="comm-grid">
-          {/* Chat visualization */}
+          {/* chat1 visualization */}
           <motion.div
-            className="chat-wrapper"
+            className="chat1-wrapper"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="chat-box glass gradient-border">
+            <div className="chat1-box glass gradient-border">
               {/* Header */}
-              <div className="chat-header">
+              <div className="chat1-header">
                 <MessageCircle className="icon-cyan" />
-                <span className="chat-title">Team Chat</span>
-                <div className="chat-status">
+                <span className="chat1-title">Team chat</span>
+                <div className="chat1-status">
                   <span className="status-dot" />
                   <span className="status-text">3 online</span>
                 </div>
               </div>
 
               {/* Messages */}
-              <div className="chat-messages">
+              <div className="chat1-messages">
                 {messages.map((msg, i) => (
                   <motion.div
                     key={i}
-                    className="chat-message"
+                    className="chat1-message"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -102,7 +102,7 @@ const CommunicationSection = () => {
               </div>
 
               {/* Input */}
-              <div className="chat-input">
+              <div className="chat1-input">
                 <input type="text" placeholder="Type a message..." disabled />
                 <AtSign />
                 <Reply />
@@ -140,7 +140,7 @@ const CommunicationSection = () => {
             </h2>
 
             <p className="comm-desc">
-              Chat, comment, and collaborate directly in your editor. Reference
+              chat1, comment, and collaborate directly in your editor. Reference
               code lines, tag teammates, and keep conversations connected.
             </p>
 

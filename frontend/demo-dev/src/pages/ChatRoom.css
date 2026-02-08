@@ -1,4 +1,4 @@
-/* ChatRoom.css - Scoped CSS variables - DARK THEME */
+/* chatRoom.css - Scoped CSS variables - DARK THEME */
 .chat-room-container {
   /* === COLOR VARIABLES === */
   --chat-bg: #ffffff;
@@ -196,7 +196,7 @@
   margin-left: auto;
 }
 
-/* === MAIN CHAT AREA === */
+/* === MAIN chat AREA === */
 .chat-main {
   flex: 1;
   display: flex;
@@ -277,7 +277,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   background: linear-gradient(
     180deg,
     rgba(99, 102, 241, 0.02) 0%,
@@ -300,7 +300,10 @@
 
 .chat-message {
   max-width: 65%;
+  gap: 20px;
   padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
   border-radius: 16px;
   background-color: var(--chat-message-bg);
   border: 1px solid var(--chat-border);
@@ -340,6 +343,7 @@
   margin: 0 0 6px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: -12px;
 }
 
 .chat-message-own .chat-message-username {
@@ -347,11 +351,12 @@
 }
 
 .chat-message-text {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--chat-text);
   margin: 0;
   word-wrap: break-word;
   line-height: 1.5;
+  margin-bottom: -15px;
 }
 
 .chat-message-time {

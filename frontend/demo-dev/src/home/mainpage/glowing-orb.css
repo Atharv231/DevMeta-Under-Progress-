@@ -1,0 +1,13 @@
+.glowing-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--orb-color) 30%, transparent) 0%,
+    transparent 70%
+  );
+
+  filter: blur(60px);
+}

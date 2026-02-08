@@ -1,0 +1,95 @@
+.footer {
+  position: relative;
+  border-top: 1px solid hsl(var(--border) / 0.5);
+  padding: 48px 0;
+  background-color: rgba(0, 0, 0, 0.922);
+}
+
+.footer-container {
+  max-width: 1120px; /* max-w-7xl */
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-svg {
+  width: 20px;
+  height: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.footer-logo-text {
+  font-family: "Captain Pilot", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(237, 237, 237);
+}
+
+/* Copyright */
+.footer-copy {
+  font-family: "Agbalumo", sans-serif;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+/* Social links */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgb(75, 75, 74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social-link:hover {
+  background: rgb(67, 67, 103);
+  color: rgb(255, 0, 0);
+}
+
+.footer-social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

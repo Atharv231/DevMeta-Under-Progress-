@@ -1,0 +1,133 @@
+.realtime-section {
+  position: relative;
+  padding: 8rem 0;
+  top: -10px;
+  overflow: hidden;
+}
+
+.glow-orb-right {
+  position: absolute;
+  right: -10rem;
+  top: 5rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+.left-content {
+  position: relative;
+  width: 110%;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  margin-bottom: 1.5rem;
+}
+
+.badge-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #22d3ee;
+}
+
+.badge-text {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.title {
+  font-size: 2.25rem;
+  font-family: "Waiting Summer", sans-serif;
+
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #22d3ee, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 1.5rem;
+  font-family: "Agbalumo", sans-serif;
+  color: rgba(255, 255, 255, 0.975);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.feature-list {
+  list-style: none;
+  font-family: "Hedvig Letters Sans", sans-serif;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.feature-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #22d3ee;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.8);
+}
+
+/* .editor-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.decor-square {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 0.5rem;
+}
+
+.decor-circle {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 50%;
+} */

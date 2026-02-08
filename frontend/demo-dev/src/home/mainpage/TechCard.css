@@ -1,0 +1,249 @@
+.tech-card {
+  background: linear-gradient(145deg, #16161f 0%, #12121a 100%);
+  border: 1px solid #1e1e2a;
+  border-radius: 16px;
+  padding: 28px;
+
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tech-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(0, 212, 255, 0.2) 50%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(0, 212, 255, 0.1);
+}
+
+.tech-card__glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 212, 255, 0.08) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.tech-card:hover .tech-card__glow {
+  opacity: 1;
+}
+
+.tech-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tech-card__icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card__icon-wrapper--cyan {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.15) 0%,
+    rgba(0, 212, 255, 0.05) 100%
+  );
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.tech-card__icon-wrapper--violet {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.15) 0%,
+    rgba(139, 92, 246, 0.05) 100%
+  );
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.tech-card__icon-wrapper--blue {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(59, 130, 246, 0.05) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.tech-card__icon-wrapper--green {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.15) 0%,
+    rgba(34, 197, 94, 0.05) 100%
+  );
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.tech-card__icon-wrapper--orange {
+  background: linear-gradient(
+    135deg,
+    rgba(249, 115, 22, 0.15) 0%,
+    rgba(249, 115, 22, 0.05) 100%
+  );
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.tech-card__icon-wrapper--red {
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.15) 0%,
+    rgba(239, 68, 68, 0.05) 100%
+  );
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.tech-card__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.tech-card__icon--cyan {
+  color: #00d4ff;
+}
+.tech-card__icon--violet {
+  color: #8b5cf6;
+}
+.tech-card__icon--blue {
+  color: #3b82f6;
+}
+.tech-card__icon--green {
+  color: #22c55e;
+}
+.tech-card__icon--orange {
+  color: #f97316;
+}
+.tech-card__icon--red {
+  color: #ef4444;
+}
+
+.tech-card__menu {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a4a5a;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.tech-card:hover .tech-card__menu {
+  color: #8b8b9a;
+}
+
+.tech-card__title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f0f0f5;
+  margin: 0 0 10px 0;
+}
+
+.tech-card__description {
+  font-size: 14px;
+  color: #8b8b9a;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.tech-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(30, 30, 42, 0.8);
+}
+
+.tech-card__stat-icon {
+  width: 14px;
+  height: 14px;
+  color: #00d4ff;
+}
+
+.tech-card__stat {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8b8b9a;
+}
+
+/* Animation variants */
+.tech-card--stagger-1 {
+  animation-delay: 0.1s;
+}
+.tech-card--stagger-2 {
+  animation-delay: 0.15s;
+}
+.tech-card--stagger-3 {
+  animation-delay: 0.2s;
+}
+.tech-card--stagger-4 {
+  animation-delay: 0.25s;
+}
+.tech-card--stagger-5 {
+  animation-delay: 0.3s;
+}
+.tech-card--stagger-6 {
+  animation-delay: 0.35s;
+}
+
+@keyframes card-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tech-card--animate {
+  animation: card-appear 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
+}

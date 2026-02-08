@@ -1,0 +1,21 @@
+.live-cursor {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.cursor-icon {
+  display: block;
+}
+
+.cursor-label {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #f6f6ff; /* equivalent to text-background */
+  white-space: nowrap;
+}

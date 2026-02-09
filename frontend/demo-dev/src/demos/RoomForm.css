@@ -11,31 +11,44 @@
 
 body {
   color: #ffffff;
+  overflow-x: hidden;
+  margin: 0;
   overflow: hidden;
 }
+
+/* ================== LAYOUT ================== */
 
 .laptop-wrapper {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%; /* FIXED: removed 100vw to prevent shifting */
   background: var(--bg-deep);
   font-family: "Inter", sans-serif;
+  transition: 0.3s ease;
+
+  /* NEW – layout stability */
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
-/* Left Hero Section */
+/* ================== HERO SECTION ================== */
+
 .hero-section {
-  padding: 150px;
+  padding: clamp(60px, 8vw, 150px); /* responsive padding */
   display: flex;
-
-  /* flex-direction: column; */
-
-  /* align-items: center; */
+  flex-direction: column;
+  justify-content: center;
   border-right: 1px solid var(--border);
   position: relative;
-  /* Grid pattern back  ground */
+
   background-image: radial-gradient(var(--border) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+/* CONTENT WIDTH CONTROL */
+.hero-content {
+  max-width: 510px;
 }
 
 .badge {
@@ -48,17 +61,23 @@ body {
   font-weight: 600;
   margin-bottom: 20px;
   border: 1px solid var(--accent);
+  transition: 0.2s ease;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
 }
 
 .logo2 {
   font-size: 4rem;
   font-family: "Waiting Summer", sans-serif;
-  /* text-align: center; */
   margin-bottom: 10px;
   margin-top: 1px;
   width: 100%;
   font-weight: 800;
+  letter-spacing: 1px;
 }
+
 .logo2 span {
   background: linear-gradient(90deg, #22d3ee, #a78bfa);
   -webkit-background-clip: text;
@@ -66,13 +85,12 @@ body {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: clamp(2.2rem, 4vw, 3rem); /* responsive */
   line-height: 1.1;
-  /* text-align: center; */
   font-family: "Agbalumo", sans-serif;
   margin-bottom: 20px;
-  color: var(--text-main);
   margin-top: 20px;
+  color: var(--text-main);
 }
 
 .hero-desc {
@@ -81,9 +99,12 @@ body {
   font-family: "Hedvig Letters Sans", sans-serif;
   max-width: 500px;
   margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.6;
 }
 
-/* Features List */
+/* ================== FEATURES ================== */
+
 .feature-grid {
   display: grid;
   gap: 24px;
@@ -94,6 +115,11 @@ body {
   display: flex;
   gap: 15px;
   align-items: flex-start;
+  transition: 0.2s ease;
+}
+
+.feat-item:hover {
+  transform: translateX(4px);
 }
 
 .feat-icon {
@@ -101,30 +127,41 @@ body {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid var(--border);
+  transition: 0.2s ease;
 }
 
 .feat-item strong {
   color: var(--text-main);
   font-size: 0.95rem;
 }
+
 .feat-item p {
   color: var(--text-dim);
   font-size: 0.85rem;
   margin-top: 4px;
+  line-height: 1.4;
 }
 
-/* Testimonial */
+/* ================== TESTIMONIAL ================== */
+
 .testimonial-box {
   background: rgba(255, 255, 255, 0.02);
   border-left: 2px solid var(--accent);
   padding: 20px;
   max-width: 450px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.testimonial-box:hover {
+  transform: translateY(-4px);
 }
 
 .testimonial-box p {
   font-style: italic;
   color: var(--text-dim);
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .user-info {
@@ -141,16 +178,18 @@ body {
   height: 24px;
   background: #333;
   border-radius: 50%;
+  transition: 0.3s ease;
 }
 
-/* Right Form Section */
+/* ================== FORM SECTION ================== */
+
 .form-section {
   background: var(--bg-panel);
   display: flex;
-
   align-items: center;
-  height: 100vh;
   justify-content: center;
+  min-height: 100vh; /* FIXED */
+  padding: clamp(20px, 4vw, 40px);
 }
 
 .auth-card {
@@ -161,13 +200,24 @@ body {
   border: 1px solid rgb(243, 243, 243);
   border-radius: 20px;
   padding: 30px;
+  transition: 0.3s ease;
+
+  /* layout stability */
+  box-sizing: border-box;
 }
 
+.auth-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ================== FORM TEXT ================== */
+
 .form-heading {
-  font-size: 3rem;
+  font-size: clamp(2rem, 3vw, 3rem);
   font-family: "Agbalumo", sans-serif;
   margin-bottom: 8px;
 }
+
 .form-subtext {
   color: var(--text-dim);
   font-size: 0.9rem;
@@ -195,7 +245,8 @@ body {
   font-weight: 700;
 }
 
-/* Buttons & Inputs (Shared from previous) */
+/* ================== BUTTONS ================== */
+
 .btn-primary {
   width: 100%;
   padding: 15px;
@@ -206,21 +257,12 @@ body {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.field {
-  margin-bottom: 10px;
-  margin-top: 1px;
-}
-
-.gen-link {
-  margin-top: 14px;
+  transition: 0.2s ease;
 }
 
 .btn-primary:hover {
   filter: brightness(1.2);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
 }
 
 .btn-outline {
@@ -233,12 +275,13 @@ body {
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 33px;
+  transition: 0.2s ease;
 }
 
 .btn-outline:hover {
   border: 1px solid wheat;
   filter: brightness(1.2);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
 }
 
 input {
@@ -249,6 +292,24 @@ input {
   color: white;
   border-radius: 8px;
   margin-top: 5px;
+  transition: 0.2s ease;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  transform: scale(1.01);
+}
+
+.field {
+  margin-bottom: 10px;
+  margin-top: 1px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .err-toast {
@@ -269,11 +330,12 @@ input {
   cursor: pointer;
   gap: 10px;
   margin-bottom: 10px;
+  transition: 0.2s ease;
 }
 
 .back-btn:hover {
   filter: brightness(1.2);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .gen-link {
@@ -287,19 +349,23 @@ input {
   cursor: pointer;
   gap: 10px;
   margin-bottom: 10px;
+  margin-top: 14px;
+  transition: 0.2s ease;
+  white-space: nowrap;
 }
 
 .main-btn {
-  /* width: 100%; */
   background-color: #080a7b;
-
   margin-top: 10px;
 }
-/* Mobile Adaptability */
+
+/* ================== RESPONSIVE ================== */
+
 @media (max-width: 1100px) {
   .hero-section {
-    padding: 40px;
+    padding: 80px;
   }
+
   .hero-title {
     font-size: 2.5rem;
   }
@@ -309,7 +375,12 @@ input {
   .laptop-wrapper {
     grid-template-columns: 1fr;
   }
+
   .hero-section {
     display: none;
+  }
+
+  .form-section {
+    padding: 20px;
   }
 }

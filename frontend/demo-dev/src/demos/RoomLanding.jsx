@@ -172,5 +172,3 @@ export default function RoomForm() {
     </div>
   );
 }
-
-<style></style>;

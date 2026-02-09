@@ -212,7 +212,7 @@ io.on("connection", (socket) => {
       time: new Date().toLocaleTimeString([], {
         hour: "2-digit",
         minute: "2-digit",
-      }),
+      }), //time zone is wrong bec the it is hosted on the render and render use the UTC time zone
     });
   });
 

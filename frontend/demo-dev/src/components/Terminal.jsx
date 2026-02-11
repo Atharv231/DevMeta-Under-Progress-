@@ -3,6 +3,7 @@ import { Terminal } from "xterm";
 import { FitAddon } from "xterm-addon-fit";
 import "xterm/css/xterm.css";
 import socket from "../socket/socket";
+import socket2 from "../socket/socket2";
 
 export default function TerminalComponent() {
   const containerRef = useRef({});
@@ -57,10 +58,10 @@ export default function TerminalComponent() {
         termRef.current[tabId] = term;
         fitRef.current[tabId] = fitAddon;
 
-        socket.emit("terminal:init", tabId);
+        socket2.emit("terminal:init", tabId);
 
         term.onData((data) => {
-          socket.emit("terminal:write", { tabId, data });
+          socket2.emit("terminal:write", { tabId, data });
         });
       });
     });
@@ -69,8 +70,8 @@ export default function TerminalComponent() {
       termRef.current[tabId]?.write(data);
     };
 
-    socket.on("terminal:data", handler);
-    return () => socket.off("terminal:data", handler);
+    socket2.on("terminal:data", handler);
+    return () => socket2.off("terminal:data", handler);
   }, [tabs]);
 
   useEffect(() => {
@@ -80,7 +81,7 @@ export default function TerminalComponent() {
         if (saveTimeoutRef.current) clearTimeout(saveTimeoutRef.current);
         saveTimeoutRef.current = setTimeout(() => {
           if (window.currentFile && window.currentCode) {
-            socket.emit("file:save", {
+            socket2.emit("file:save", {
               filename: window.currentFile,
               content: window.currentCode,
             });

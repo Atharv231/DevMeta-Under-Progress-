@@ -2,6 +2,7 @@ import Editor from "@monaco-editor/react";
 import { useRef, useEffect } from "react";
 import * as monaco from "monaco-editor";
 import socket from "../socket/socket";
+import socket2 from "../socket/socket2";
 
 export default function MonacoEditor({ code, onChange }) {
   const editorRef = useRef(null);
@@ -9,7 +10,7 @@ export default function MonacoEditor({ code, onChange }) {
   const isRemoteUpdateRef = useRef(false);
 
   useEffect(() => {
-    socket.on("editor:error", ({ line, column, message }) => {
+    socket2.on("editor:error", ({ line, column, message }) => {
       if (!editorRef.current) return;
 
       const editor = editorRef.current;
@@ -47,7 +48,7 @@ export default function MonacoEditor({ code, onChange }) {
     });
 
     return () => {
-      socket.off("editor:error");
+      socket2.off("editor:error");
       socket.off("editor:update");
     };
   }, []);

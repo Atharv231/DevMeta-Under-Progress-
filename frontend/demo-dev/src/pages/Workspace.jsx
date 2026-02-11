@@ -7,6 +7,7 @@ import TerminalComponent from "../components/Terminal";
 
 import { getFiles, getFile, createFile, deleteFile } from "../api/fileApi";
 import socket from "../socket/socket";
+import socket2 from "../socket/socket2";
 import "./ChatRoom.css";
 
 export default function Workspace() {
@@ -146,7 +147,7 @@ export default function Workspace() {
   const handleSave = () => {
     if (!currentFile) return;
 
-    socket.emit("file:save", {
+    socket2.emit("file:save", {
       filename: currentFile,
       content: code,
     });
@@ -167,7 +168,7 @@ export default function Workspace() {
 
     autosaveTimerRef.current = setTimeout(() => {
       if (value !== savedCode && currentFile) {
-        socket.emit("file:save", {
+        socket2.emit("file:save", {
           filename: currentFile,
           content: value,
         });
@@ -193,11 +194,11 @@ export default function Workspace() {
 
   const handleRun = () => {
     if (!currentFile) return;
-    socket.emit("run:file", { tabId: "main", name: currentFile });
+    socket2.emit("run:file", { tabId: "main", name: currentFile });
   };
 
   const handleStop = () => {
-    socket.emit("run:stop", { tabId: "main" });
+    socket2.emit("run:stop", { tabId: "main" });
   };
 
   const closeTab = (file, e) => {
